@@ -9,6 +9,9 @@ The reason why one might use a pre-divder is when a much smaller frequency is ne
 hold up to approximatly 60kHz. Therefore when a lower frequency is needed on a much higher frequency, the predividers
 make that possible.
 
+##Usage
+* Once the board specific code has been loaded onto the processor, the LED should begin to blink at the user set frequency right away and continue until an new program is loaded onto the board. 
+
 ## Devices
 * MSP430G2553
 * MSP430FR2311
