@@ -1,12 +1,28 @@
-# Button Based Delay
-Now that you have begun to familiarize yourself with the TIMER modules, why don't we make an interesting change to our code from the last lab.
+# Button based delay
 
-## Task
-Setup your microcontroller to initially blink and LED at a rate of 10Hz upon restarting or powering up. Then utilizing one of the buttons on board, a user should be able to set the delay or blinking rate of the LED by holding down a button. The duration in which the button is depressed should then become the new rate at which the LED blinks. As previously stated, you most likely will want to take advantage of the fact that TIMER modules exist and see if you can let them do a bulk of the work for you.
+## Tyler Brady
 
-### Extra Work
-## Reset Button
-What is a piece of electronics without a reset button? Instead of relying on resetting your processor using the built in reset circuitry, why not instead use another button to reset the rate back to 10Hz.
+## Background
+* The main purpose of this project was to create a program capable of changing the frequency of a timer based on
+the duration that the button was pressed. This was done using polling on a secoundary timer with a interrupt of
+about 0.01 seconds. The secoundary timer would check and see if the button was being pressed and change the timing of
+the led timer by changing the interrupt trigger period, adding about 0.01 seconds every cycle.
 
-## Button Based Hertz
-Most likely using two buttons, what if instead of making a delay loop based on the time, the user could instead enter a mode where the number of times they pressed the button would become the number in Hz of the blinking rate? How do you think you would implement that with just one button?
+## Devices
+* MSP430G2553
+* MSP430FR2311
+* MSP430FR5994
+* MSP430FR6989
+* MSP430F5529
+
+## Differences
+* Similarly to other projects, the main difference between processors had to do with the way timers were set up,
+and which pins were used for input and output. However, one major difference of code can be found in the MSP430FR2311
+as when the code from the four other processors was adapted to the 2311, it was found that the amount of FRAM in
+the processor could not handle the total code. Therefore in order to do the function the code needed to be adapted and changed
+so that the code would fit within the FRAM of the processor.
+
+## Extra work
+* The extra work done for this project was the implementaion of a secoundary reset button. This was done within the 
+MSP430FR6989 by adding a new section of polling before the check for the button delay to see if the reset is being pressed.
+ 
