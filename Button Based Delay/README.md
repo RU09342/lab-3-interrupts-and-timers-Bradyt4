@@ -8,7 +8,7 @@ the duration that the button was pressed. This was done using polling on a secou
 about 0.01 seconds. The secoundary timer would check and see if the button was being pressed and change the timing of
 the led timer by changing the interrupt trigger period, adding about 0.01 seconds every cycle.
 
-##Usage
+## Usage
 * Once the board specific code has been loaded into the program, the user can hold down the designated button, causing the LEDs to remain off until the button is released. The
 longer the button is held the longer the time between blinks after the button is released. On the 6989 a second designated button can also be pressed to reset the frequency back
 to its default 10Hz.
